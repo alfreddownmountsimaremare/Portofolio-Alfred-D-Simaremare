@@ -233,6 +233,10 @@ section h3 {
         width: 100px;
         height: 100px;
     }
+
+    .experience-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
