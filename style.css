@@ -63,56 +63,58 @@ section {
     max-width: 200px;
     border-radius: 8px; /* jadi kotak dengan sudut sedikit membulat */
 }
-  /* EXPERIENCE SECTION */
-    .experience-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+/* EXPERIENCE SECTION */
+.experience-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
 
-    .experience-item {
-      background: #fff;
-      border-radius: 8px;
-      padding: 15px;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: center;
-      cursor: pointer;
-    }
+.experience-item {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+}
 
-    .experience-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
-    }
+.experience-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+}
 
-    .experience-item img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 8px;
-    }
+.experience-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 16 / 9; /* menjaga proporsi gambar */
+}
 
-    .experience-text {
-      margin-top: 10px;
-      text-align: left;
-    }
+.experience-text {
+  padding: 15px;
+  flex-grow: 1;
+  text-align: left;
+}
 
-    .experience-text h3 {
-      margin: 0;
-      font-size: 1.1rem;
-      color: #222;
-      font-weight: 600;
-    }
+.experience-text h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #222;
+  font-weight: 600;
+}
 
-    .experience-text p {
-      margin: 5px 0;
-      font-size: 0.9rem;
-      color: #555;
-      line-height: 1.4;
-    }
-
+.experience-text p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+}
 
 /* PROJECTS SECTION */
 .project-container {
