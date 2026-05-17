@@ -203,52 +203,93 @@ section h2::after{
 }
 
 /* =========================
-   EXPERIENCE
+   EXPERIENCE SECTION
 ========================= */
+
 #experience{
-  background: linear-gradient(to bottom,#111827,#0f172a);
+  background: linear-gradient(to bottom,#0f172a,#111827);
+  padding: 100px 8%;
+}
+
+#experience h2{
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 60px;
+  color: white;
 }
 
 #experience h3{
-  margin: 40px 0 20px;
-  font-size: 2rem;
   color: #38bdf8;
+  margin: 50px 0 20px;
+  font-size: 2rem;
 }
 
+/* GRID */
 .experience-container{
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(340px,1fr));
-  gap: 35px;
+  gap: 30px;
 }
 
+/* CARD */
 .experience-item{
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 25px;
-  overflow: hidden;
+  backdrop-filter: blur(15px);
   transition: 0.5s;
-  backdrop-filter: blur(12px);
-  position: relative;
   cursor: pointer;
+
+  opacity: 0;
+  transform: translateY(60px);
+
+  animation: cardShow 1s forwards;
 }
 
+/* delay animasi */
+.experience-item:nth-child(1){animation-delay: 0.1s;}
+.experience-item:nth-child(2){animation-delay: 0.2s;}
+.experience-item:nth-child(3){animation-delay: 0.3s;}
+.experience-item:nth-child(4){animation-delay: 0.4s;}
+.experience-item:nth-child(5){animation-delay: 0.5s;}
+.experience-item:nth-child(6){animation-delay: 0.6s;}
+
+/* hover */
 .experience-item:hover{
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(56,189,248,0.2);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(56,189,248,0.25);
 }
 
+/* FOTO */
 .experience-item img{
   width: 100%;
   height: 250px;
   object-fit: cover;
-  transition: 0.5s;
+  transition: 0.6s;
 }
 
+/* foto gerak */
 .experience-item:hover img{
   transform: scale(1.08);
 }
 
+/* overlay gradient */
+.experience-item::before{
+  content:'';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+  rgba(15,23,42,0.95),
+  rgba(15,23,42,0.2));
+  z-index: 1;
+}
+
+/* TEXT */
 .experience-text{
+  position: relative;
+  z-index: 2;
   padding: 25px;
 }
 
@@ -259,28 +300,99 @@ section h2::after{
 }
 
 .experience-text p{
-  color: #94a3b8;
-  margin-bottom: 15px;
-}
-
-.experience-text ul{
-  max-height: 0;
-  overflow: hidden;
-  transition: 0.5s ease;
-  opacity: 0;
-}
-
-.experience-item:hover .experience-text ul{
-  max-height: 700px;
-  opacity: 1;
-}
-
-.experience-text ul li{
-  margin-bottom: 12px;
-  color: #e2e8f0;
+  color: #cbd5e1;
   font-size: 0.95rem;
 }
 
+/* LIST EXPERIENCE */
+.experience-text ul{
+  margin-top: 20px;
+
+  max-height: 0;
+  overflow: hidden;
+
+  opacity: 0;
+
+  transition:
+  max-height 0.7s ease,
+  opacity 0.5s ease;
+}
+
+/* kalau active */
+.experience-item.active ul{
+  max-height: 1000px;
+  opacity: 1;
+}
+
+/* isi list */
+.experience-text ul li{
+  color: #e2e8f0;
+  margin-bottom: 14px;
+  line-height: 1.7;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+/* animasi isi list */
+.experience-item.active ul li{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* efek delay tiap li */
+.experience-item.active ul li:nth-child(1){
+  transition-delay: 0.1s;
+}
+.experience-item.active ul li:nth-child(2){
+  transition-delay: 0.2s;
+}
+.experience-item.active ul li:nth-child(3){
+  transition-delay: 0.3s;
+}
+.experience-item.active ul li:nth-child(4){
+  transition-delay: 0.4s;
+}
+.experience-item.active ul li:nth-child(5){
+  transition-delay: 0.5s;
+}
+
+/* glow animation */
+.experience-item::after{
+  content:'';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(56,189,248,0.2);
+  border-radius: 50%;
+  top: -80px;
+  right: -80px;
+  filter: blur(50px);
+  animation: floatingGlow 5s infinite linear;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes cardShow{
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatingGlow{
+  0%{
+    transform: translateY(0px) rotate(0deg);
+  }
+  50%{
+    transform: translateY(20px) rotate(180deg);
+  }
+  100%{
+    transform: translateY(0px) rotate(360deg);
+  }
+}
 /* =========================
    PROJECTS
 ========================= */
