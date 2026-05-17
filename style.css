@@ -1,376 +1,388 @@
-body {
-    font-family: Arial, sans-serif;
+/* IMPORT FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* GLOBAL */
+* {
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f7fb;
+    color: #222;
+    line-height: 1.7;
+}
+
+/* HEADER */
 header {
-    background: #333;
-    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
     padding: 1rem 0;
 }
 
 header nav ul {
     list-style: none;
-    text-align: center;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
 }
 
 header nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s ease;
 }
 
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: #38bdf8;
+    transition: 0.3s;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+}
+
+header nav ul li a:hover {
+    color: #38bdf8;
+}
+
+/* SECTION */
 section {
-    padding: 2rem;
-    text-align: center;
+    padding: 5rem 8%;
 }
 
+/* HOME */
 #home {
-    background: #f4f4f4;
-    padding: 5rem 0;
-}
-
-/* ABOUT SECTION */
-.about-section {
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: left;
-    padding: 2rem;
+    background:
+        linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.7)),
+        url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+}
+
+#home h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+#home p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: auto;
+    opacity: 0.9;
+}
+
+/* ABOUT */
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .about-content {
     display: flex;
-    max-width: 900px;
-    width: 100%;
     align-items: center;
-    justify-content: space-between;
+    gap: 50px;
+    max-width: 1200px;
 }
 
 .about-text {
     flex: 1;
-    padding-right: 20px;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.about-text p {
     text-align: justify;
+    color: #555;
 }
 
 .about-image img {
-    max-width: 200px;
-    border-radius: 8px; /* jadi kotak dengan sudut sedikit membulat */
+    width: 320px;
+    border-radius: 25px;
+    object-fit: cover;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+    transition: 0.4s ease;
 }
-/* EXPERIENCE SECTION */
+
+.about-image img:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* EXPERIENCE */
 #experience {
-  padding: 2rem;
-  background-color: #f9f9f9;
+    background: #f8fafc;
 }
 
-#experience h2,
-#experience h3 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #222;
+#experience h2 {
+    text-align: center;
+    font-size: 2.7rem;
+    margin-bottom: 50px;
+    color: #0f172a;
 }
 
-/* Container grid untuk pengalaman */
 .experience-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+    max-width: 1300px;
+    margin: auto;
 }
 
-/* Setiap kartu pengalaman */
 .experience-item {
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
-  text-align: left;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    position: relative;
 }
 
-/* Hover efek */
 .experience-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
-/* Gambar pengalaman */
 .experience-item img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  background-color: #eee;
-  border-radius: 8px 8px 0 0;
-  display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: 0.5s ease;
 }
 
-/* Teks pengalaman */
+.experience-item:hover img {
+    transform: scale(1.05);
+}
+
 .experience-text {
-  padding: 15px;
-  flex-grow: 1;
+    padding: 25px;
 }
 
-/* Judul posisi */
 .experience-text h3 {
-  margin-top: 0;
-  font-size: 1.1rem;
-  color: #222;
-  font-weight: 600;
+    font-size: 1.3rem;
+    color: #0f172a;
+    margin-bottom: 10px;
 }
 
-/* Detail waktu dan deskripsi */
 .experience-text p {
-  margin: 5px 0;
-  font-size: 0.9rem;
-  color: #555;
-  line-height: 1.4;
+    color: #64748b;
+    margin-bottom: 12px;
 }
 
-/* Responsive untuk mobile */
-@media (max-width: 768px) {
-  .experience-container {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
+.experience-text ul {
+    padding-left: 18px;
 }
 
-/* PROJECTS SECTION */
+.experience-text ul li {
+    margin-bottom: 10px;
+    color: #475569;
+}
+
+/* PROJECTS */
+#projects {
+    background: white;
+}
+
+#projects h2 {
+    text-align: center;
+    font-size: 2.7rem;
+    margin-bottom: 50px;
+}
+
 .project-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1300px;
     margin: auto;
 }
 
 .project {
-    background: #fff;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    cursor: pointer;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.4s ease;
 }
 
 .project:hover {
-    transform: translateY(-4px);
-    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.12);
 }
 
 .project img {
     width: 100%;
-    height: auto;
+    height: 220px;
     object-fit: cover;
-    border-radius: 8px;
 }
 
 .project-text {
-    margin-top: 10px;
+    padding: 20px;
 }
 
 .project-text h3 {
-    margin: 0;
-    font-size: 1.1rem;
-    color: #222;
-    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
 }
 
 .project-text p {
-    margin: 5px 0;
-    font-size: 0.9rem;
-    color: #555;
-    line-height: 1.4;
+    color: #64748b;
 }
 
-.project a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
-@media (max-width: 768px) {
-    .project-container {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-}
-
-/* Skills Section */
+/* SKILLS */
 #skills {
+    background: #f8fafc;
+}
+
+#skills h2 {
     text-align: center;
-    padding: 2rem;
-    background-color: #f9f9f9;
-  }
-  
-  #skills h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #333;
-  }
-  
-  .skills {
+    font-size: 2.7rem;
+    margin-bottom: 40px;
+}
+
+.skills {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 20px;
     flex-wrap: wrap;
-    padding: 1rem;
-  }
-  
-  .skill {
-    flex-shrink: 0;
-    width: 150px;
-    height: 150px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-    margin: 10px;
-    border-radius: 12px;
+    gap: 25px;
+}
+
+.skill {
+    width: 140px;
+    height: 140px;
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .skill img {
+    background: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.4s ease;
+}
+
+.skill:hover {
+    transform: translateY(-10px) rotate(2deg);
+}
+
+.skill img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .skill:hover img {
-    transform: scale(1.1);
-  }
-  
-  
- /* Deskripsi Skills */
-  .skill-description {
-    display: none;
-    margin-top: 1rem;
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .skill-description h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-  }
-  
-  .skill-description p {
-    font-size: 1rem;
-    color: #666;
-  }
-  
-  /* Responsif */
-  @media (max-width: 768px) {
-    .skill {
-      width: 120px;
-      height: 120px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .skill {
-      width: 100px;
-      height: 100px;
-    }
-  } 
+}
 
-
-/* Honors and Awards Section */
+/* HONORS */
 #honors-awards {
+    background: white;
+}
+
+#honors-awards h2 {
     text-align: center;
-    padding: 2rem;
-    background-color: #f9f9f9;
-  }
-  
-  #honors-awards h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #333;
-  }
-  
-  .awards {
+    font-size: 2.7rem;
+    margin-bottom: 40px;
+}
+
+.awards {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 20px;
     flex-wrap: wrap;
-    padding: 1rem;
-  }
-  
-  .award {
-    flex-shrink: 0;
-    width: 150px;
-    height: 150px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-    margin: 10px;
-    border-radius: 12px;
+    gap: 25px;
+}
+
+.award {
+    width: 160px;
+    height: 160px;
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .award img {
+    background: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.4s ease;
+}
+
+.award:hover {
+    transform: translateY(-10px);
+}
+
+.award img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .award:hover img {
-    transform: scale(1.1);
-  }
-  
-  /* Deskripsi Award */
-  .award-description {
-    display: none;
-    margin-top: 1rem;
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .award-description h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-  }
-  
-  .award-description p {
-    font-size: 1rem;
-    color: #666;
-  }
-  
-  /* Responsif */
-  @media (max-width: 768px) {
-    .award {
-      width: 120px;
-      height: 120px;
+}
+
+/* FOOTER */
+footer {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+    #home h1 {
+        font-size: 2.8rem;
     }
-  }
-  
-  @media (max-width: 480px) {
-    .award {
-      width: 100px;
-      height: 100px;
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
     }
-  } 
+
+    .about-text p {
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 250px;
+    }
+
+    section {
+        padding: 4rem 5%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    header nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    #home h1 {
+        font-size: 2.2rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+    }
+
+    .experience-container,
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+}
