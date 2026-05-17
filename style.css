@@ -107,10 +107,9 @@ section {
 /* Gambar pengalaman */
 .experience-item img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;           /* Menampilkan seluruh gambar */
-  background-color: #eee;        /* Tambahkan latar agar tidak putih kosong */
+  height: 250px;
+  object-fit: contain;
+  background-color: #fff;
   border-radius: 8px 8px 0 0;
   display: block;
 }
