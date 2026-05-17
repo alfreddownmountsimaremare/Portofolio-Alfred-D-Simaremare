@@ -14,6 +14,24 @@
     }
   </script>
 </head>
+<script>
+  const experienceItems = document.querySelectorAll('.experience-item');
+
+  experienceItems.forEach(item => {
+    item.addEventListener('click', () => {
+
+      // tutup semua card lain
+      experienceItems.forEach(el => {
+        if(el !== item){
+          el.classList.remove('active');
+        }
+      });
+
+      // buka card yang diklik
+      item.classList.toggle('active');
+    });
+  });
+</script>
 <body>
   <header>
     <nav>
