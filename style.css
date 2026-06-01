@@ -326,55 +326,76 @@ section h2::after{
 /* =========================
    PROJECTS
 ========================= */
+/* =========================
+   PROJECTS
+========================= */
+
 .project-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:25px;
+  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+  gap:20px;
 }
 
 .project-card{
   background:rgba(255,255,255,0.05);
-  border-radius:20px;
-  overflow:hidden;
-  cursor:pointer;
-  transition:0.4s;
   border:1px solid rgba(255,255,255,0.08);
+
+  border-radius:20px;
+
+  padding:25px;
+
+  cursor:pointer;
+
+  transition:.4s;
 }
 
 .project-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 15px 30px rgba(56,189,248,.25);
-}
+  transform:translateY(-5px);
 
-.project-card img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
+  background:rgba(255,255,255,0.1);
+
+  box-shadow:
+  0 15px 30px rgba(56,189,248,.25);
 }
 
 .project-card h3{
-  padding:20px;
-  font-size:18px;
+  margin:0;
+
   text-align:center;
+
+  font-size:18px;
+
+  line-height:1.6;
+
+  color:white;
 }
 
 /* DETAIL PROJECT */
 
 .project-view{
+
   display:none;
-  margin-top:60px;
-  text-align:center;
+
+  margin-top:50px;
 
   background:rgba(255,255,255,0.05);
+
   border-radius:25px;
+
   padding:40px;
+
+  animation:fadeUp .5s ease;
 }
 
 .project-view img{
+
   width:100%;
+
   max-width:900px;
-  margin:auto;
+
   display:block;
+
+  margin:auto;
 
   border-radius:20px;
 
@@ -383,20 +404,30 @@ section h2::after{
 }
 
 .project-view h3{
+
   margin-top:30px;
-  font-size:32px;
+
+  text-align:center;
+
+  font-size:30px;
+
+  color:white;
 }
 
 .project-view p{
+
   margin-top:20px;
+
   max-width:900px;
+
   margin-left:auto;
+
   margin-right:auto;
 
   text-align:justify;
+
   color:#cbd5e1;
 }
-
 /* =========================
    SKILLS
 ========================= */
