@@ -326,70 +326,47 @@ section h2::after{
 /* =========================
    PROJECTS
 ========================= */
-.project-container{
-display:flex;
-gap:25px;
-overflow-x:auto;
-padding:10px 0 20px;
-scroll-behavior:smooth;
+.project-list{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
 }
 
-.project-container::-webkit-scrollbar{
-height:8px;
+.project-item{
+  background: rgba(255,255,255,0.05);
+  border-radius:20px;
+  padding:20px;
+  cursor:pointer;
+  transition:0.4s;
 }
 
-.project-container::-webkit-scrollbar-thumb{
-background:#38bdf8;
-border-radius:20px;
+.project-item:hover{
+  background: rgba(255,255,255,0.10);
 }
 
-.project{
-min-width:350px;
-max-width:350px;
-
-background:rgba(255,255,255,0.05);
-border-radius:25px;
-
-overflow:hidden;
-cursor:pointer;
-
-transition:.4s;
-border:1px solid rgba(255,255,255,0.08);
+.project-item h3{
+  color:white;
+  margin:0;
 }
 
-.project:hover{
-transform:translateY(-10px);
-box-shadow:0 15px 35px rgba(99,102,241,0.25);
+.project-detail{
+  display:none;
+  margin-top:20px;
+  animation: fadeUp .5s ease;
 }
 
-.project img{
-width:100%;
-height:250px;
-object-fit:cover;
+.project-detail img{
+  width:100%;
+  max-width:800px;
+  display:block;
+  margin:auto;
+  border-radius:20px;
+  margin-bottom:20px;
 }
 
-.project-title{
-padding:20px;
-}
-
-.project-title h3{
-color:white;
-font-size:18px;
-}
-
-.project-description{
-display:none;
-
-padding:20px;
-border-top:1px solid rgba(255,255,255,0.1);
-
-color:#cbd5e1;
-animation:fadeUp .4s ease;
-}
-
-.project-description h3{
-margin-bottom:15px;
-color:white;
+.project-detail p{
+  color:#cbd5e1;
+  text-align:justify;
 }
 
 /* =========================
