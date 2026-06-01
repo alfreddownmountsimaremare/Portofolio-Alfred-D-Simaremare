@@ -461,62 +461,93 @@ With a strong mathematical background, hands-on analytical experience, professio
       
 
       <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-container">
-          <div class="project">
-            <img src="project1.jpg" alt="Clustering">
-            <div class="project-text">
-              <h3>Clustering Analysis of Indonesian Provinces Based on Rice Farming Characteristics in 2024: Harvested Area, Productivity, and Production</h3>
-              <p>This project involves a clustering analysis of Indonesian provinces based on three key rice farming characteristics in 2024: harvested area, productivity, and production volume.
-                We applied the K-Means clustering algorithm to group provinces with similar agricultural profiles. The goal is to identify patterns and regional similarities in rice cultivation, which can support data-driven decision-making in agricultural planning and policy development.</p>
-            </div>
-          </div>
-          <div class="project">
-            <img src="project2.jpg" alt="Classification">
-            <div class="project-text">
-              <h3>Application of Naive Bayes Method in Classifying Countries Based on Financial and Economic Indicators</h3>
-              <p>This project applies the Naive Bayes classification method to group countries based on selected financial and economic indicators.
-                By using supervised learning, the model aims to classify countries into categories that reflect their economic conditions.
-                The project demonstrates how probabilistic models like Naive Bayes can be effectively used for macroeconomic analysis and global financial profiling.</p>
-            </div>
-          </div>
-          <div class="project">
-            <img src="project3.jpg" alt="Dinamic System Analysis">
-            <div class="project-text">
-              <h3>Second-Order Dynamic System Analysis on Tractor Suspension Using a Mass-Spring Model to Support Plowing Efficiency in the Food Security Program</h3>
-              <p>This project analyzes a second-order dynamic system on tractor suspension using a mass-spring model, aiming to improve the efficiency of plowing in rice fields.
-                By modeling the mechanical behavior of the suspension system, we evaluate how vibration and stability affect tractor performance.
-                The findings contribute to optimizing agricultural machinery as part of efforts to enhance productivity and support national food security programs.</p>
-            </div>
-          </div>
-          <div class="project">
-            <img src="project4.jpg" alt="Forecasting">
-            <div class="project-text">
-              <h3>Forecasting Global Oil Prices in 2025 Using the ARIMA Model</h3>
-              <p>This project utilizes the ARIMA (AutoRegressive Integrated Moving Average) model to forecast global oil prices for the year 2025.
-                By analyzing historical time series data, the model captures trends and patterns to generate accurate price predictions.
-                The results aim to support economic planning and decision-making in sectors affected by oil market fluctuations.</p>
-            </div>
-          </div>
-          <div class="project">
-            <img src="project5.jpg" alt="Statistika Matematika">
-            <div class="project-text">
-              <h3>Hypothesis Testing and Parameter Estimation of Bitcoin Prices</h3>
-              <p>This project focuses on conducting statistical hypothesis tests and parameter estimation on Bitcoin price data.
-                By applying inferential statistical methods, we aim to determine key characteristics such as mean price behavior,
-                volatility patterns, and confidence intervals—providing a deeper understanding of Bitcoin's market dynamics and supporting data-driven investment insights.</p>
-            </div>
-          </div>
-          <div class="project">
-            <img src="project6.jpg" alt="OJK">
-            <div class="project-text">
-              <h3>Development of SIGINTA (Transaction Intelligence System) Application for Detecting Suspicious Transactions in the Digital Financial Sector Using K-Means Clustering</h3>
-              <p>This project involves the development of SIGINTA, a transaction intelligence application designed to detect suspicious activities in the digital financial sector.
-                By implementing the K-Means clustering algorithm, the system groups transaction data to identify unusual patterns that may indicate fraudulent or high-risk behavior.
-                SIGINTA aims to enhance early detection and support financial institutions in improving risk management and regulatory compliance.</p>
-            </div>
-          </div>
-        </div>
+  <h2>Projects</h2>
+
+  <div class="project-container">
+<div class="project" onclick="showProject('project1')">
+  <img src="project1.jpg" alt="Clustering">
+  <div class="project-title">
+    <h3>Clustering Analysis</h3>
+  </div>
+
+  <div class="project-description" id="project1">
+    <h3>Clustering Analysis of Indonesian Provinces Based on Rice Farming Characteristics in 2024: Harvested Area, Productivity, and Production</h3>
+    <p>
+      This project involves a clustering analysis of Indonesian provinces based on three key rice farming characteristics in 2024: harvested area, productivity, and production volume. We applied the K-Means clustering algorithm to group provinces with similar agricultural profiles. The goal is to identify patterns and regional similarities in rice cultivation, which can support data-driven decision-making in agricultural planning and policy development.
+    </p>
+  </div>
+</div>
+
+<div class="project" onclick="showProject('project2')">
+  <img src="project2.jpg" alt="Classification">
+  <div class="project-title">
+    <h3>Naive Bayes Classification</h3>
+  </div>
+
+  <div class="project-description" id="project2">
+    <h3>Application of Naive Bayes Method in Classifying Countries Based on Financial and Economic Indicators</h3>
+    <p>
+      This project applies the Naive Bayes classification method to group countries based on selected financial and economic indicators. By using supervised learning, the model aims to classify countries into categories that reflect their economic conditions. The project demonstrates how probabilistic models like Naive Bayes can be effectively used for macroeconomic analysis and global financial profiling.
+    </p>
+  </div>
+</div>
+
+<div class="project" onclick="showProject('project3')">
+  <img src="project3.jpg" alt="Dynamic System">
+  <div class="project-title">
+    <h3>Dynamic System Analysis</h3>
+  </div>
+
+  <div class="project-description" id="project3">
+    <h3>Second-Order Dynamic System Analysis on Tractor Suspension Using a Mass-Spring Model</h3>
+    <p>
+      This project analyzes a second-order dynamic system on tractor suspension using a mass-spring model, aiming to improve the efficiency of plowing in rice fields. By modeling the mechanical behavior of the suspension system, we evaluate how vibration and stability affect tractor performance.
+    </p>
+  </div>
+</div>
+
+<div class="project" onclick="showProject('project4')">
+  <img src="project4.jpg" alt="Forecasting">
+  <div class="project-title">
+    <h3>Oil Price Forecasting</h3>
+  </div>
+
+  <div class="project-description" id="project4">
+    <h3>Forecasting Global Oil Prices in 2025 Using the ARIMA Model</h3>
+    <p>
+      This project utilizes the ARIMA model to forecast global oil prices for the year 2025. By analyzing historical time series data, the model captures trends and patterns to generate accurate price predictions that can support economic planning and decision-making.
+    </p>
+  </div>
+</div>
+
+<div class="project" onclick="showProject('project5')">
+  <img src="project5.jpg" alt="Bitcoin">
+  <div class="project-title">
+    <h3>Bitcoin Statistical Analysis</h3>
+  </div>
+
+  <div class="project-description" id="project5">
+    <h3>Hypothesis Testing and Parameter Estimation of Bitcoin Prices</h3>
+    <p>
+      This project focuses on conducting statistical hypothesis tests and parameter estimation on Bitcoin price data. Inferential statistical methods were applied to analyze price behavior, volatility patterns, and confidence intervals.
+    </p>
+  </div>
+</div>
+
+<div class="project" onclick="showProject('project6')">
+  <img src="project6.jpg" alt="SIGINTA">
+  <div class="project-title">
+    <h3>SIGINTA Application</h3>
+  </div>
+
+  <div class="project-description" id="project6">
+    <h3>Development of SIGINTA (Transaction Intelligence System)</h3>
+    <p>
+      This project involves the development of SIGINTA, a transaction intelligence application designed to detect suspicious activities in the digital financial sector. By implementing the K-Means clustering algorithm, the system identifies unusual transaction patterns and supports financial risk management.
+    </p>
+  </div>
+</div>
+    
       </section>
     </main>
 
