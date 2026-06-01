@@ -383,7 +383,7 @@ section h2::after{
   gap: 30px;
 }
 
-.skill{
+.skills .skills{
   width: 140px;
   height: 140px;
   border-radius: 25px;
@@ -391,19 +391,22 @@ section h2::after{
   transition: 0.4s;
   cursor: pointer;
   position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.skill img{
+.skills .skills img{
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* semua logo tampil utuh */
 }
 
-.skill:hover{
+.skills .skills:hover{
   transform: translateY(-10px) rotate(3deg) scale(1.05);
   box-shadow: 0 15px 30px rgba(56,189,248,0.35);
 }
-
 .skill-description{
   margin-top: 40px;
   background: rgba(255,255,255,0.05);
