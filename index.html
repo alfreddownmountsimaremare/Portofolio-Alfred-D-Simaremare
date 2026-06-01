@@ -461,105 +461,82 @@ With a strong mathematical background, hands-on analytical experience, professio
       
 
       <section id="projects">
-  <h2>Projects</h2>
 
-  <section id="projects">
-  <h2>Projects</h2>
+<h2>Projects</h2>
 
-  <div class="project-list">
+<div class="project-grid">
 
-    <!-- PROJECT 1 -->
-    <div class="project-item" onclick="toggleProject('project1')">
-      <h3>Clustering Analysis of Indonesian Provinces Based on Rice Farming Characteristics in 2024</h3>
+  <div class="project-card"
+       onclick="showProject(
+       'project1.jpg',
+       'Clustering Analysis of Indonesian Provinces',
+       'This project involves clustering analysis using K-Means...')">
 
-      <div class="project-detail" id="project1">
-        <img src="project1.jpg" alt="Clustering">
-
-        <p>
-          This project involves a clustering analysis of Indonesian provinces
-          based on harvested area, productivity, and production volume using
-          the K-Means algorithm. The goal is to identify regional similarities
-          in rice cultivation to support agricultural planning and policy
-          development.
-        </p>
-      </div>
-    </div>
-
-    <!-- PROJECT 2 -->
-    <div class="project-item" onclick="toggleProject('project2')">
-      <h3>Application of Naive Bayes Method in Classifying Countries</h3>
-
-      <div class="project-detail" id="project2">
-        <img src="project2.jpg" alt="Classification">
-
-        <p>
-          This project applies the Naive Bayes classification method to group
-          countries based on selected economic and financial indicators,
-          demonstrating the use of probabilistic models for macroeconomic
-          analysis.
-        </p>
-      </div>
-    </div>
-
-    <!-- PROJECT 3 -->
-    <div class="project-item" onclick="toggleProject('project3')">
-      <h3>Second-Order Dynamic System Analysis on Tractor Suspension</h3>
-
-      <div class="project-detail" id="project3">
-        <img src="project3.jpg" alt="Dynamic System">
-
-        <p>
-          Dynamic system analysis of tractor suspension using a mass-spring
-          model to improve plowing efficiency and support food security
-          initiatives.
-        </p>
-      </div>
-    </div>
-
-    <!-- PROJECT 4 -->
-    <div class="project-item" onclick="toggleProject('project4')">
-      <h3>Forecasting Global Oil Prices in 2025 Using ARIMA</h3>
-
-      <div class="project-detail" id="project4">
-        <img src="project4.jpg" alt="Forecasting">
-
-        <p>
-          Forecasting global oil prices using the ARIMA model by analyzing
-          historical time-series data and generating future predictions.
-        </p>
-      </div>
-    </div>
-
-    <!-- PROJECT 5 -->
-    <div class="project-item" onclick="toggleProject('project5')">
-      <h3>Hypothesis Testing and Parameter Estimation of Bitcoin Prices</h3>
-
-      <div class="project-detail" id="project5">
-        <img src="project5.jpg" alt="Bitcoin">
-
-        <p>
-          Statistical analysis of Bitcoin prices using hypothesis testing,
-          confidence intervals, and parameter estimation techniques.
-        </p>
-      </div>
-    </div>
-
-    <!-- PROJECT 6 -->
-    <div class="project-item" onclick="toggleProject('project6')">
-      <h3>SIGINTA Transaction Intelligence System</h3>
-
-      <div class="project-detail" id="project6">
-        <img src="project6.jpg" alt="SIGINTA">
-
-        <p>
-          Development of SIGINTA, a transaction intelligence system that uses
-          K-Means clustering to identify suspicious transaction patterns in
-          the digital financial sector.
-        </p>
-      </div>
-    </div>
-
+      <img src="project1.jpg">
+      <h3>Clustering Analysis</h3>
   </div>
+
+  <div class="project-card"
+       onclick="showProject(
+       'project2.jpg',
+       'Country Classification Using Naive Bayes',
+       'This project applies Naive Bayes classification...')">
+
+      <img src="project2.jpg">
+      <h3>Naive Bayes Classification</h3>
+  </div>
+
+  <div class="project-card"
+       onclick="showProject(
+       'project3.jpg',
+       'Dynamic System Analysis',
+       'Mass spring tractor suspension model...')">
+
+      <img src="project3.jpg">
+      <h3>Dynamic System</h3>
+  </div>
+
+  <div class="project-card"
+       onclick="showProject(
+       'project4.jpg',
+       'Oil Price Forecasting',
+       'Forecasting oil prices using ARIMA...')">
+
+      <img src="project4.jpg">
+      <h3>ARIMA Forecasting</h3>
+  </div>
+
+  <div class="project-card"
+       onclick="showProject(
+       'project5.jpg',
+       'Bitcoin Statistical Analysis',
+       'Hypothesis testing and parameter estimation...')">
+
+      <img src="project5.jpg">
+      <h3>Bitcoin Analysis</h3>
+  </div>
+
+  <div class="project-card"
+       onclick="showProject(
+       'project6.jpg',
+       'SIGINTA Transaction Intelligence',
+       'Suspicious transaction detection using K-Means...')">
+
+      <img src="project6.jpg">
+      <h3>SIGINTA</h3>
+  </div>
+
+</div>
+
+<div class="project-view" id="projectView">
+
+  <img id="projectImage">
+
+  <h3 id="projectTitle"></h3>
+
+  <p id="projectDescription"></p>
+
+</div>
     
       </section>
     </main>
@@ -779,27 +756,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-function toggleProject(id){
 
-  const details =
-  document.querySelectorAll('.project-detail');
+function showProject(image, title, description){
 
-  details.forEach(detail => {
+  document.getElementById("projectImage").src = image;
 
-    if(detail.id !== id){
-      detail.style.display = "none";
-    }
+  document.getElementById("projectTitle").innerText = title;
 
-  });
+  document.getElementById("projectDescription").innerText = description;
 
-  const selected =
-  document.getElementById(id);
+  document.getElementById("projectView").style.display = "block";
 
-  if(selected.style.display === "block"){
-    selected.style.display = "none";
-  }else{
-    selected.style.display = "block";
-  }
+  document.getElementById("projectView")
+    .scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
 }
 
 </script>
