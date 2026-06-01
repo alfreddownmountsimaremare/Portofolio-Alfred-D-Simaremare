@@ -467,77 +467,83 @@ With a strong mathematical background, hands-on analytical experience, professio
 <div class="project-grid">
 
   <div class="project-card"
-       onclick="showProject(
-       'project1.jpg',
-       'Clustering Analysis of Indonesian Provinces',
-       'This project involves clustering analysis using K-Means...')">
+  onclick="showProject(
+  'project1.jpg',
+  'Clustering Analysis of Indonesian Provinces Based on Rice Farming Characteristics in 2024',
+  'This project involves a clustering analysis of Indonesian provinces based on harvested area, productivity, and production volume using the K-Means algorithm. The objective is to identify regional similarities in rice cultivation and support data-driven agricultural planning and policy development.'
+  )">
 
-      <img src="project1.jpg">
-      <h3>Clustering Analysis</h3>
+    <h3>Clustering Analysis of Indonesian Provinces Based on Rice Farming Characteristics in 2024</h3>
+
   </div>
 
   <div class="project-card"
-       onclick="showProject(
-       'project2.jpg',
-       'Country Classification Using Naive Bayes',
-       'This project applies Naive Bayes classification...')">
+  onclick="showProject(
+  'project2.jpg',
+  'Application of Naive Bayes Method in Classifying Countries Based on Financial and Economic Indicators',
+  'This project applies the Naive Bayes classification method to classify countries based on selected economic and financial indicators. The model demonstrates how probabilistic machine learning techniques can support macroeconomic analysis and country profiling.'
+  )">
 
-      <img src="project2.jpg">
-      <h3>Naive Bayes Classification</h3>
+    <h3>Application of Naive Bayes Method in Classifying Countries Based on Financial and Economic Indicators</h3>
+
   </div>
 
   <div class="project-card"
-       onclick="showProject(
-       'project3.jpg',
-       'Dynamic System Analysis',
-       'Mass spring tractor suspension model...')">
+  onclick="showProject(
+  'project3.jpg',
+  'Second-Order Dynamic System Analysis on Tractor Suspension Using a Mass-Spring Model',
+  'This project analyzes tractor suspension dynamics using a second-order mass-spring system model. The study evaluates vibration behavior and system stability to improve plowing efficiency and support agricultural productivity.'
+  )">
 
-      <img src="project3.jpg">
-      <h3>Dynamic System</h3>
+    <h3>Second-Order Dynamic System Analysis on Tractor Suspension Using a Mass-Spring Model</h3>
+
   </div>
 
   <div class="project-card"
-       onclick="showProject(
-       'project4.jpg',
-       'Oil Price Forecasting',
-       'Forecasting oil prices using ARIMA...')">
+  onclick="showProject(
+  'project4.jpg',
+  'Forecasting Global Oil Prices in 2025 Using the ARIMA Model',
+  'This project utilizes the ARIMA model to forecast global oil prices by analyzing historical time-series data. The results provide valuable insights for economic planning and market analysis.'
+  )">
 
-      <img src="project4.jpg">
-      <h3>ARIMA Forecasting</h3>
+    <h3>Forecasting Global Oil Prices in 2025 Using the ARIMA Model</h3>
+
   </div>
 
   <div class="project-card"
-       onclick="showProject(
-       'project5.jpg',
-       'Bitcoin Statistical Analysis',
-       'Hypothesis testing and parameter estimation...')">
+  onclick="showProject(
+  'project5.jpg',
+  'Hypothesis Testing and Parameter Estimation of Bitcoin Prices',
+  'This project focuses on statistical hypothesis testing and parameter estimation using Bitcoin price data. The study investigates price behavior, volatility, and confidence intervals through inferential statistical methods.'
+  )">
 
-      <img src="project5.jpg">
-      <h3>Bitcoin Analysis</h3>
+    <h3>Hypothesis Testing and Parameter Estimation of Bitcoin Prices</h3>
+
   </div>
 
   <div class="project-card"
-       onclick="showProject(
-       'project6.jpg',
-       'SIGINTA Transaction Intelligence',
-       'Suspicious transaction detection using K-Means...')">
+  onclick="showProject(
+  'project6.jpg',
+  'Development of SIGINTA Transaction Intelligence System Using K-Means Clustering',
+  'SIGINTA is a transaction intelligence application developed to detect suspicious financial transactions using K-Means clustering. The system identifies unusual transaction patterns and supports fraud detection and risk management.'
+  )">
 
-      <img src="project6.jpg">
-      <h3>SIGINTA</h3>
+    <h3>Development of SIGINTA Transaction Intelligence System Using K-Means Clustering</h3>
+
   </div>
 
 </div>
 
 <div class="project-view" id="projectView">
 
-  <img id="projectImage">
+  <img id="projectImage" src="">
 
   <h3 id="projectTitle"></h3>
 
   <p id="projectDescription"></p>
 
 </div>
-    
+
       </section>
     </main>
 
@@ -743,9 +749,13 @@ document.addEventListener("DOMContentLoaded", function () {
     item.addEventListener('click', () => {
 
       experienceItems.forEach(el => {
-        if (el !== item) {
+
+        if(el !== item){
+
           el.classList.remove('active');
+
         }
+
       });
 
       item.classList.toggle('active');
@@ -757,21 +767,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-function showProject(image, title, description){
+function showProject(image,title,description){
 
-  document.getElementById("projectImage").src = image;
+  document.getElementById("projectImage").src=image;
 
-  document.getElementById("projectTitle").innerText = title;
+  document.getElementById("projectTitle").innerText=title;
 
-  document.getElementById("projectDescription").innerText = description;
+  document.getElementById("projectDescription").innerText=description;
 
-  document.getElementById("projectView").style.display = "block";
+  document.getElementById("projectView").style.display="block";
 
   document.getElementById("projectView")
-    .scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+  .scrollIntoView({
+      behavior:"smooth"
+  });
 
 }
 
