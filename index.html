@@ -755,22 +755,22 @@ With a strong mathematical background, hands-on analytical experience, professio
 </footer>
 
 <script>
+
 document.addEventListener("DOMContentLoaded", function () {
 
-  const experienceItems = document.querySelectorAll('.experience-item');
+  const experienceItems =
+  document.querySelectorAll('.experience-item');
 
   experienceItems.forEach(item => {
 
     item.addEventListener('click', () => {
 
-      // tutup semua card lain
       experienceItems.forEach(el => {
         if (el !== item) {
           el.classList.remove('active');
         }
       });
 
-      // buka/tutup card
       item.classList.toggle('active');
 
     });
@@ -778,6 +778,30 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
+function toggleProject(id){
+
+  const details =
+  document.querySelectorAll('.project-detail');
+
+  details.forEach(detail => {
+
+    if(detail.id !== id){
+      detail.style.display = "none";
+    }
+
+  });
+
+  const selected =
+  document.getElementById(id);
+
+  if(selected.style.display === "block"){
+    selected.style.display = "none";
+  }else{
+    selected.style.display = "block";
+  }
+}
+
 </script>
 
 </body>
